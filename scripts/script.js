@@ -1,5 +1,7 @@
 
 
+// funciones
+
 function contenido(){
     let edad = prompt("Ingrese su edad");
     if(edad >= 18){
@@ -21,23 +23,6 @@ const saludar = () =>{
         }
     }
 }
-
-// while (nombre === ""){
-//     alert("lo siento, no pudimos identificarlo");
-//     let nombre = prompt("Ingrese nuevamente su nombre");
-//     if(nombre !== ""){
-//         alert(`Bienvenido/a a Deco En Sillas ${nombre}`);
-//     }
-//     return(`Bienvenido/a a Deco En Sillas ${nombre}`);
-// }
-// alert(`Bienvenido/a a Deco En Sillas ${nombre}`);
-
-contenido();
-saludar();
-
-
-alert("gracias por visitar la primera Pre-Entrega");
-
 const despedir = () =>{
     let cantidadDeVeces = parseInt(prompt("Ingrese un numero"));
     for(let i = 1; i <= cantidadDeVeces; i++){
@@ -45,8 +30,7 @@ const despedir = () =>{
     }    
 }
 
-despedir();
-
+// objetos
 
 class Sillas{
     constructor(tipo, precio, color){
@@ -55,20 +39,105 @@ class Sillas{
         this.color = color;
         this.info = `silla ${this.tipo}, para la comodidad, con un valor de: ${this.precio}, y de color: ${this.color}.`;
     }
-
     verInfo(){
         document.write(this.info + "<br>");
     }
 }
 
-
 const silla1 = new Sillas ("acolchonada", "$" + 20000, "negro");
 const silla2 = new Sillas ("con apoya brazos", "$" + 15000, "blanco");
 const silla3 = new Sillas ("acolchonada", "$" + 19000, "gris");
+
+//llamando objetos
 
 silla1.verInfo();
 silla2.verInfo();
 silla3.verInfo();
 
+// llamando funciones
+
+contenido();
+saludar();
+despedir();
 
 
+// variables
+
+let categoriaPregunta = prompt("Ingrese la busqueda deseada (sillas y mesas)");
+const numerosFiltro = [20000, 30000, 15000, 19000, 4000, 31000, 7000, 50000];
+const colores = ["negro","rojo","azul","blanco"]
+
+// arrays
+
+const categorias = ["sillas", "mesas"];
+
+const sillaNegra = [{
+    id: 1,
+    producto: "silla acolchonada",
+    color: "negro",
+    precio: 20000,
+}];
+const mesaNegra = [{
+    id: 2,
+    producto: "mesa redonda",
+    color: "negro",
+    precio: 30000,
+}];
+
+
+//funciones con arrays
+
+const cate = () =>{
+    if(categoriaPregunta === categorias[0]){
+        alert ("Esta es la categoria de sillas");
+        console.log(sillaNegra);
+    } else if (categoriaPregunta === categorias[1]){
+        alert("Esta es la categorias de mesas");
+        console.log(mesaNegra);
+    } else{
+        alert("Esa categoria no existe")
+    }
+}
+
+//llamando funciones
+
+cate();
+
+
+//funciones con arrays
+
+const precios = () => {
+    let filtro = numerosFiltro.filter(function(item){
+        return item >= pregunta;
+    });
+    alert(filtro);    
+}
+
+const colorSilla = () =>{
+    if(colorPregunta === colores[0]){
+        alert(`Esta es la silla ${colores[0]}`);
+    } else if(colorPregunta === colores[1]){
+        alert(`Esta es la silla ${colores[1]}`);
+    }else if(colorPregunta === colores[2]){
+        alert(`Esta es la silla ${colores[2]}`);
+    }else if(colorPregunta === colores[3]){
+        alert(`Esta es la silla ${colores[3]}`);
+    }else{
+        alert("No tenemos disponible ese color de silla")
+    }
+}
+
+// prompt
+
+let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
+
+//llamando funciones
+
+precios();
+
+// prompt
+let colorPregunta = prompt("color de la silla");
+
+//llamando funciones
+
+colorSilla();
