@@ -64,8 +64,6 @@ despedir();
 // variables
 
 let categoriaPregunta = prompt("Ingrese la busqueda deseada (sillas y mesas)");
-let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
-let colorPregunta = prompt("color de la silla");
 const numerosFiltro = [20000, 30000, 15000, 19000, 4000, 31000, 7000, 50000];
 const colores = ["negro","rojo","azul","blanco"]
 
@@ -88,14 +86,33 @@ const mesaNegra = [{
 
 
 //funciones con arrays
+const sillasFunction = () =>{
+    let colorPregunta = prompt("color de la silla");
+    let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
+    if(colorPregunta === colores[0] || pregunta === numerosFiltro[0]){
+        console.log(sillaNegra);
+    } else{
+        alert("Aun no tenemos disponible esa silla")
+    }
+}
+
+const mesasFunction = () =>{
+    let colorMesa = prompt("color de la mesa");
+    let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
+    if(colorMesa === colores[0] || pregunta === numerosFiltro[1]){
+        console.log(mesaNegra);
+    } else{
+        alert("Aun no tenemos disponible esa mesa")
+    }
+
+}
 
 const cate = () =>{
-    if(categoriaPregunta === categorias[0] || pregunta === numerosFiltro[0] || colorPregunta === colores[0]){
-        alert ("Esta es la categoria de sillas");
-        console.log(sillaNegra);
-    } else if (categoriaPregunta === categorias[1] && pregunta === numerosFiltro[1] && colorPregunta === colores[0]){
+    if(categoriaPregunta === categorias[0]){
+        sillasFunction();
+    } else if (categoriaPregunta === categorias[1]){
         alert("Esta es la categorias de mesas");
-        console.log(mesaNegra);
+        mesasFunction()
     } else{
         alert("Esa categoria no existe")
     }
@@ -105,6 +122,11 @@ const cate = () =>{
 
 cate();
 
+
+// var / prompt
+
+let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
+let colorPregunta = prompt("color");
 
 //funciones con arrays
 
@@ -117,15 +139,15 @@ const precios = () => {
 
 const colorSilla = () =>{
     if(colorPregunta === colores[0]){
-        alert(`Esta es la silla ${colores[0]}`);
+        alert(`Esto es ${colores[0]}`);
     } else if(colorPregunta === colores[1]){
-        alert(`Esta es la silla ${colores[1]}`);
+        alert(`Esto es ${colores[1]}`);
     }else if(colorPregunta === colores[2]){
-        alert(`Esta es la silla ${colores[2]}`);
+        alert(`Esto es ${colores[2]}`);
     }else if(colorPregunta === colores[3]){
-        alert(`Esta es la silla ${colores[3]}`);
+        alert(`Esto es ${colores[3]}`);
     }else{
-        alert("No tenemos disponible ese color de silla")
+        alert("No tenemos disponible ese color")
     }
 }
 
