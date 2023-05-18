@@ -62,36 +62,98 @@ despedir();
 
 
 // variables
-
-let categoriaPregunta = prompt("Ingrese la busqueda deseada (sillas y mesas)");
-const numerosFiltro = [20000, 30000, 15000, 19000, 4000, 31000, 7000, 50000];
-const colores = ["negro","rojo","azul","blanco"]
+const numerosFiltro = [20000, 30000, 15000, 19000, 4000, 31000, 7000, 50000, 20500];
+const colores = ["negro","rojo","azul","blanco","gris"]
 
 // arrays
 
 const categorias = ["sillas", "mesas"];
 
-const sillaNegra = [{
-    id: 1,
-    producto: "silla acolchonada",
-    color: "negro",
-    precio: 20000,
-}];
-const mesaNegra = [{
-    id: 2,
-    producto: "mesa redonda",
-    color: "negro",
-    precio: 30000,
-}];
+const sillaNegra = [
+    {
+        id: 1,
+        producto: "silla acolchonada",
+        color: "negro",
+        precio: 20000,
+        categoria: "silla",
+    },
+    {
+        id: 2,
+        producto: "silla acolchonada",
+        color: "blanco",
+        precio: 21000,
+        categoria: "silla",
+    },
+    {
+        id: 3,
+        producto: "silla acolchonada",
+        color: "gris",
+        precio: 20500,
+        categoria: "silla",
+    }
+];
+const mesaNegra = [
+    {
+        id: 2,
+        producto: "mesa redonda",
+        color: "negro",
+        precio: 30000,
+        categoria: "mesa",
+    },
+    {
+        id: 2,
+        producto: "mesa redonda",
+        color: "blanco",
+        precio: 31000,
+        categoria: "mesa",
+    },
+    {
+        id: 3,
+        producto: "mesa redonda",
+        color: "gris",
+        precio: 30500,
+        categoria: "mesa",
+    }
+];
+const carrito = [];
 
+const init = () =>{
+    alert(`lista de inventario por categorias: 
+            1: Sillas
+            2: Mesas`);
+    
+    const listado = sillaNegra.reduce((acc, el) => acc += `${el.id} - ${el.producto} - $${el.precio} \n`, "\n");
+
+    const elecUser = parseInt(prompt(`Ingrese el nro deseado ${listado}`));
+
+    const buscarProd = sillaNegra.find(p => p.id === elecUser);
+
+    console.log(buscarProd);
+
+    const nuevoObjeto = {
+        id: buscarProd.id,
+        producto: buscarProd.producto,
+        color: buscarProd.color,
+        precio: buscarProd.precio,
+        categoria: buscarProd.categoria,
+        cantidad : 1,
+    };
+    carrito.push(nuevoObjeto);
+}
+
+init()
 
 //funciones con arrays
 const sillasFunction = () =>{
     let colorPregunta = prompt("color de la silla");
     let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
     if(colorPregunta === colores[0] || pregunta === numerosFiltro[0]){
-        console.log(sillaNegra);
-    } else{
+        console.log(sillaNegra[0]);
+    } else if(colorPregunta === colores[3] || pregunta === numerosFiltro[0]){
+        console.log(sillaNegra[1]);
+    }else if(colorPregunta === colores[4] || pregunta === numerosFiltro[0]){
+        console.log(sillaNegra[2]);
+    }else{
         alert("Aun no tenemos disponible esa silla")
     }
 }
@@ -108,14 +170,9 @@ const mesasFunction = () =>{
 }
 
 const cate = () =>{
-    if(categoriaPregunta === categorias[0]){
-        sillasFunction();
-    } else if (categoriaPregunta === categorias[1]){
-        alert("Esta es la categorias de mesas");
-        mesasFunction()
-    } else{
-        alert("Esa categoria no existe")
-    }
+    let categoriaPregunta = prompt("Ingrese la busqueda deseada: sillas y mesas").toLowerCase();
+    const filtrar = sillaNegra.filter(p => p.categoria === categoriaPregunta);
+    console.log(filtrar);
 }
 
 //llamando funciones
