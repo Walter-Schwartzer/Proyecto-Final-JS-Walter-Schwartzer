@@ -64,6 +64,8 @@ despedir();
 // variables
 
 let categoriaPregunta = prompt("Ingrese la busqueda deseada (sillas y mesas)");
+let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
+let colorPregunta = prompt("color de la silla");
 const numerosFiltro = [20000, 30000, 15000, 19000, 4000, 31000, 7000, 50000];
 const colores = ["negro","rojo","azul","blanco"]
 
@@ -88,10 +90,10 @@ const mesaNegra = [{
 //funciones con arrays
 
 const cate = () =>{
-    if(categoriaPregunta === categorias[0]){
+    if(categoriaPregunta === categorias[0] || pregunta === numerosFiltro[0] || colorPregunta === colores[0]){
         alert ("Esta es la categoria de sillas");
         console.log(sillaNegra);
-    } else if (categoriaPregunta === categorias[1]){
+    } else if (categoriaPregunta === categorias[1] && pregunta === numerosFiltro[1] && colorPregunta === colores[0]){
         alert("Esta es la categorias de mesas");
         console.log(mesaNegra);
     } else{
@@ -127,17 +129,7 @@ const colorSilla = () =>{
     }
 }
 
-// prompt
-
-let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
-
 //llamando funciones
 
 precios();
-
-// prompt
-let colorPregunta = prompt("color de la silla");
-
-//llamando funciones
-
 colorSilla();
