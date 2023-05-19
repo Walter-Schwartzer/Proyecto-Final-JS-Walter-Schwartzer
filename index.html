@@ -9,11 +9,13 @@
     <title>DecoEnSillas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/iconoPagBlanco.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
+            <a href="./index.html"><img src="./img/iconoPagBlanco.png" alt="icon" width="60" height="60" style="margin-right: 20px;"></a> 
             <a class="navbar-brand" href="./index.html">DecoEnSillas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,56 +23,57 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Catalogo</a>
+                <a class="nav-link" href="#articulos">Catalogo</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                 </li>
             </ul>
             </div>
         </div>
         </nav>
     </header>
-    <main>
-        <div>
+    <main class="container">
+        <div class="ctn-bienvenida">
             <h1>Bienvenidos a Deco En Sillas</h1>
-            <button><a href="#">Ir Al Catalogo</a></button>            
+            <button><a href="#articulos">Ir Al Catalogo</a></button>            
         </div>
-        <section>
-            <article>
-                <div>
-                    <h3>Sillas</h3>
+        <section id="articulos" class="ctn-articles row">
+            <article class="ctn-sillas-padre col-6">
+                <div class="ctn-sillas">
+                    <a href="./pages/sillas.html">Sillas</a>
                 </div>
             </article>
-            <article>
-                <div>
-                    <h3>Mesas</h3>
+            <article class="ctn-mesas-padre col-6">
+                <div class="ctn-mesas">
+                    <a href="./pages/mesas.html">Mesas</a>
                 </div>
             </article>
         </section>
     </main>
-    <footer>
-        <h3>Contactos</h3>
-        <div class="">
-            <div class="">
+    <footer class="container">
+        <div class="ctn-footer row">
+            <div class="col-sm-1"></div>
+            <div class="cont-footer col-sm-5 col-12">
                 <h3>Redes Sociales</h3>
                 <ul><i class="fa-brands fa-facebook"></i><a href="#" target="_blank"> Facebook</a></ul>
                 <ul><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/decoensillas/" target="_blank"> Instagram</a></ul>
                 <ul><i class="fa-brands fa-whatsapp"></i><a href="https://api.whatsapp.com/send?phone=+542804409213&text=Hola quiero realizar una compra"> Whatsapp</a></ul>
             </div>
-            <div id="nosotros" class="">
+            <div class="col-sm-1"></div>  
+            <div id="nosotros" class="cont-footer col-sm-5 col-12">
                     <h3>Nosotros</h3>
-                    <a href="#">Quienes Somos</a>
-                    <a href="#">Tienda</a>
-            </div>
+                    <a href="./pages/nosotros.html">Quienes Somos</a>
+            </div> 
+        
         </div>
-        <div class="">
+        <div class="cont-copy">
             <p> Todos los derechos reservados © 2023 <b> DecoEnSillas </b> </p>
         </div>
     </footer>

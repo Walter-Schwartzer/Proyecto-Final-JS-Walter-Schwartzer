@@ -1,3 +1,7 @@
+body {
+  background-color: #f8f4e8;
+  cursor: default; }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,5 +9,88 @@
 
 a {
   text-decoration: none; }
+
+.ctn-bienvenida {
+  height: 400px;
+  text-align: center;
+  justify-content: center; }
+  .ctn-bienvenida h1 {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 3rem; }
+  .ctn-bienvenida button {
+    width: 120px;
+    height: 40px;
+    background-color: #2c29299b; }
+    .ctn-bienvenida button a {
+      text-align: center;
+      font-size: 18px;
+      width: 20px;
+      color: #efe0b2;
+      font-weight: 400; }
+      .ctn-bienvenida button a:hover {
+        color: #fdf3a4; }
+
+.ctn-articles {
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center; }
+  .ctn-articles .ctn-sillas-padre {
+    background-image: url(../img/imgSillaCatalogo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    border: 1px solid #000000b3;
+    margin-bottom: 20px; }
+    .ctn-articles .ctn-sillas-padre .ctn-sillas {
+      position: relative;
+      top: 178px; }
+      .ctn-articles .ctn-sillas-padre .ctn-sillas a {
+        color: #000; }
+  .ctn-articles .ctn-mesas-padre {
+    background-image: url(../img/mesaRedondaLaqueada.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    border: 1px solid #000000b3;
+    margin-bottom: 20px; }
+    .ctn-articles .ctn-mesas-padre .ctn-mesas {
+      position: relative;
+      top: 178px; }
+
+footer {
+  padding: 50px 0; }
+  footer .ctn-footer {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px; }
+    footer .ctn-footer .cont-footer {
+      display: flex;
+      flex-direction: column;
+      padding: 40px; }
+      footer .ctn-footer .cont-footer h3 {
+        margin-bottom: 30px;
+        font-weight: 600; }
+      footer .ctn-footer .cont-footer a {
+        margin-top: 10px;
+        font-weight: 600;
+        color: #000; }
+      footer .ctn-footer .cont-footer .fa-brands {
+        margin-right: 5px;
+        font-size: 17px; }
+      footer .ctn-footer .cont-footer a:hover {
+        opacity: 0.8;
+        color: #7da3d8; }
+  footer .cont-copy {
+    text-align: center;
+    align-items: center;
+    border-top: 0.1px solid #000;
+    margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
