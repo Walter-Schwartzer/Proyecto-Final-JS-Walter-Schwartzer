@@ -32,27 +32,27 @@ const despedir = () =>{
 
 // objetos
 
-class Sillas{
-    constructor(tipo, precio, color){
-        this.tipo = tipo;
-        this.precio = precio;
-        this.color = color;
-        this.info = `silla ${this.tipo}, para la comodidad, con un valor de: ${this.precio}, y de color: ${this.color}.`;
-    }
-    verInfo(){
-        document.write(this.info + "<br>");
-    }
-}
+// class Sillas{
+//     constructor(tipo, precio, color){
+//         this.tipo = tipo;
+//         this.precio = precio;
+//         this.color = color;
+//         this.info = `silla ${this.tipo}, para la comodidad, con un valor de: ${this.precio}, y de color: ${this.color}.`;
+//     }
+//     verInfo(){
+//         document.write(this.info + "<br>");
+//     }
+// }
 
-const silla1 = new Sillas ("acolchonada", "$" + 20000, "negro");
-const silla2 = new Sillas ("con apoya brazos", "$" + 15000, "blanco");
-const silla3 = new Sillas ("acolchonada", "$" + 19000, "gris");
+// const silla1 = new Sillas ("acolchonada", "$" + 20000, "negro");
+// const silla2 = new Sillas ("con apoya brazos", "$" + 15000, "blanco");
+// const silla3 = new Sillas ("acolchonada", "$" + 19000, "gris");
 
 //llamando objetos
 
-silla1.verInfo();
-silla2.verInfo();
-silla3.verInfo();
+// silla1.verInfo();
+// silla2.verInfo();
+// silla3.verInfo();
 
 // llamando funciones
 
@@ -212,3 +212,6 @@ const colorSilla = () =>{
 
 precios();
 colorSilla();
+
+
+

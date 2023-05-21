@@ -36,6 +36,9 @@ a {
   align-items: center;
   text-align: center; }
   .ctn-articles .ctn-sillas-padre {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
     background-image: url(../img/imgSillaCatalogo.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -45,12 +48,67 @@ a {
     border-radius: 15px;
     border: 1px solid #000000b3;
     margin-bottom: 20px; }
+    .ctn-articles .ctn-sillas-padre::before {
+      content: "SILLAS";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffffffb2;
+      transform: scale(0);
+      transition: transform .6s;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem; }
+    .ctn-articles .ctn-sillas-padre:hover::before {
+      transform: scale(1) rotate(360deg); }
     .ctn-articles .ctn-sillas-padre .ctn-sillas {
       position: relative;
       top: 178px; }
       .ctn-articles .ctn-sillas-padre .ctn-sillas a {
-        color: #000; }
+        color: transparent; }
+  .ctn-articles .ctn-sillones-padre {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background-image: url(../img/imgSillonCatalogo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 2rem;
+    width: 400px;
+    height: 400px;
+    border-radius: 15px;
+    border: 1px solid #000000b3;
+    margin-bottom: 20px; }
+    .ctn-articles .ctn-sillones-padre::before {
+      content: "SILLONES";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffffffb2;
+      transform: scale(0);
+      transition: transform .6s;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem; }
+    .ctn-articles .ctn-sillones-padre:hover::before {
+      transform: scale(1) rotate(360deg); }
+    .ctn-articles .ctn-sillones-padre .ctn-sillones {
+      position: relative;
+      top: 178px; }
+      .ctn-articles .ctn-sillones-padre .ctn-sillones a {
+        color: transparent; }
   .ctn-articles .ctn-mesas-padre {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
     background-image: url(../img/mesaRedondaLaqueada.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -60,13 +118,97 @@ a {
     border-radius: 15px;
     border: 1px solid #000000b3;
     margin-bottom: 20px; }
+    .ctn-articles .ctn-mesas-padre::before {
+      content: "MESAS";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ffffffb2;
+      transform: scale(0);
+      transition: transform .6s;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem; }
+    .ctn-articles .ctn-mesas-padre:hover::before {
+      transform: scale(1) rotate(360deg); }
     .ctn-articles .ctn-mesas-padre .ctn-mesas {
       position: relative;
       top: 178px; }
+      .ctn-articles .ctn-mesas-padre .ctn-mesas a {
+        color: transparent; }
+
+.card {
+  border: none;
+  position: relative;
+  width: 300px;
+  margin: 20px;
+  height: 350px;
+  background: #f8f4e8; }
+  .card:hover .front {
+    transform: perspective(600px) rotateY(180deg); }
+  .card:hover .back {
+    transform: perspective(600px) rotateY(360deg); }
+  .card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s; }
+  .card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000; }
+    .card .front img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .card .front h3 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      text-align: center; }
+  .card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: #90b0a1;
+    box-shadow: 0 5px 10px #000;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center; }
+    .card .back h3 {
+      font-size: 30px;
+      margin-top: 20px;
+      letter-spacing: 2px; }
+    .card .back p {
+      letter-spacing: 1px; }
+    .card .back .link {
+      background: #2c29299b;
+      border: none;
+      border-top: solid 1px #f3f3f3;
+      height: 50px;
+      line-height: 50px; }
+      .card .back .link a {
+        color: #f3f3f3; }
+        .card .back .link a:hover {
+          color: #2498db; }
 
 footer {
   padding: 50px 0; }
   footer .ctn-footer {
+    justify-content: center;
+    text-align: center;
     max-width: 1200px;
     margin: auto;
     margin-top: 100px; }

@@ -3,8 +3,10 @@
 // variables with colors
 
 $bg-color-principal: #f8f4e8;
+$bg-color-secundario: #90b0a1;
 $bg-color-a: #efe0b2;
 $bg-color-hover-a: #fdf3a4;
+$bg-color-button: #2c29299b;
 
 /////////////////////////////
 
@@ -50,7 +52,7 @@ a{
     }
     button{
         @include tamanos(120px, 40px);
-        background-color: #2c29299b;
+        background-color: $bg-color-button;
         a{
             text-align: center;
             font-size: 18px;
@@ -73,6 +75,28 @@ a{
     align-items: center;
     text-align: center;
     .ctn-sillas-padre{
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        &::before{
+            content: "SILLAS";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffffb2;
+            transform: scale(0);
+            transition: transform .6s;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        &:hover::before{
+            transform: scale(1) rotate(360deg);
+        }
         background-image: url(../img/imgSillaCatalogo.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -85,11 +109,72 @@ a{
             position: relative;
             top: 178px;
             a{
-                color: #000;
+                color: transparent;
+            }
+        }
+    }
+    .ctn-sillones-padre{
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        &::before{
+            content: "SILLONES";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffffb2;
+            transform: scale(0);
+            transition: transform .6s;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        &:hover::before{
+            transform: scale(1) rotate(360deg);
+        }
+        background-image: url(../img/imgSillonCatalogo.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        font-size: 2rem;
+        @include tamanos(400px, 400px);
+        border-radius: 15px;
+        border: 1px solid #000000b3;
+        margin-bottom: 20px;
+        .ctn-sillones{
+            position: relative;
+            top: 178px;
+            a{
+                color: transparent;
             }
         }
     }
     .ctn-mesas-padre{
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        &::before{
+            content: "MESAS";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffffb2;
+            transform: scale(0);
+            transition: transform .6s;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        &:hover::before{
+            transform: scale(1) rotate(360deg);
+        }
         background-image: url(../img/mesaRedondaLaqueada.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -101,18 +186,100 @@ a{
         .ctn-mesas{
             position: relative;
             top: 178px;
+            a{
+                color: transparent;
+            }
         }
     }
 }
 
 //////////////////////////////////////////////////////////
 
+// main sillas/sillones/mesas
+
+.card{
+    border: none;
+    position: relative;
+    width: 300px;
+    margin: 20px;
+    height: 350px;
+    background: $bg-color-principal;
+    &:hover .front{
+        transform: perspective(600px) rotateY(180deg);
+    }
+    &:hover .back{
+        transform: perspective(600px) rotateY(360deg);
+    }
+    .face{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .5s;
+    }
+    .front{
+        transform: perspective(600px) rotateY(0deg);
+        box-shadow: 0 5px 10px #000;
+        img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h3{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            background: rgba(0,0,0,.4);
+            text-align: center;
+        }
+    }
+    .back{
+        transform: perspective(600px) rotateY(180deg);
+        background: $bg-color-secundario;
+        box-shadow: 0 5px 10px #000;
+        padding: 15px;
+        color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        h3{
+            font-size: 30px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        p{
+            letter-spacing: 1px;
+        }
+        .link{
+            background: $bg-color-button;
+            border: none;
+            border-top: solid 1px #f3f3f3;
+            height: 50px;
+            line-height: 50px;
+            a{
+                color: #f3f3f3;
+                &:hover{
+                    color: #2498db;
+                }
+            }
+        }
+    }
+}
 
 ////// footer
 
 footer{
     padding: 50px 0;
     .ctn-footer{
+        justify-content: center;
+        text-align: center;
         max-width: 1200px;
         margin: auto;
         margin-top: 100px;
