@@ -2,12 +2,12 @@
 let carrito = JSON.parse(localStorage.getItem(`carrito`)) || [];
 
 
-const ctnSectionShop = document.getElementById(`ctn-productos`);
+const ctnSectionShopSillones = document.getElementById(`ctn-productosSillones`);
 const verCarrito = document.getElementById(`verCarrito`);
 const modal = document.getElementById(`ctn-modal`);
 const cantidadCarrito = document.getElementById(`cantidadCarrito`);
 
-stockSilla.forEach((product)=>{
+StockSillones.forEach((product)=>{
     let article = document.createElement(`article`);
     article.classList.add(`card`);
     article.classList.add(`col-4`);
@@ -22,7 +22,7 @@ stockSilla.forEach((product)=>{
     </div>
     `;
 
-    ctnSectionShop.append(article);
+    ctnSectionShopSillones.append(article);
 
     const button = document.getElementById(`agregar${product.id}`);
 
@@ -162,9 +162,3 @@ const saveLocal = () =>{
 };
 
 carritoCounter();
-
-
-
-
-
-

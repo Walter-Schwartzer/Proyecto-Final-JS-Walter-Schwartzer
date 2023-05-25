@@ -151,7 +151,7 @@ const StockSillones = [
     {
         id: 1,
         producto: "sillon eames",
-        img: `<img src="../img/sillon/sillonEames.jpg">`,
+        img: `../img/sillon/sillonEames.jpg`,
         cantidad: 1,
         precio: 30500,
         categoria: "sillones",
@@ -159,7 +159,7 @@ const StockSillones = [
     {
         id: 2,
         producto: "sillon eiffel",
-        img: `<img src="../img/sillon/sillonEiffel.jpg">`,
+        img: `../img/sillon/sillonEiffel.jpg`,
         cantidad: 1,
         precio: 30500,
         categoria: "sillones",
@@ -167,7 +167,7 @@ const StockSillones = [
     {
         id: 3,
         producto: "sillon mecedora",
-        img: `<img src="../img/sillon/sillonMecedora.jpg">`,
+        img: `../img/sillon/sillonMecedora.jpg`,
         cantidad: 1,
         precio: 30500,
         categoria: "sillones",
@@ -175,7 +175,7 @@ const StockSillones = [
     {
         id: 4,
         producto: "sillon tulip suizo",
-        img: `<img src="../img/sillon/sillonTulipSuizo.jpg">`,
+        img: `../img/sillon/sillonTulipSuizo.jpg`,
         cantidad: 1,
         precio: 30500,
         categoria: "sillones",
