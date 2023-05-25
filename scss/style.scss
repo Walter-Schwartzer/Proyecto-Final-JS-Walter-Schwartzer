@@ -41,6 +41,10 @@ a{
 
 // index/bienvenida
 
+.ver-cart{
+    cursor: pointer;
+}
+
 .ctn-bienvenida{
     height: 400px;
     text-align: center;
@@ -198,12 +202,13 @@ a{
 // main sillas/sillones/mesas
 
 .card{
-    border: none;
+    justify-content: center;
     position: relative;
-    width: 300px;
+    width: 350px;
     margin: 20px;
-    height: 350px;
-    background: $bg-color-principal;
+    height: 400px;
+    background: transparent;
+    border: none;
     &:hover .front{
         transform: perspective(600px) rotateY(180deg);
     }
@@ -260,7 +265,6 @@ a{
         .link{
             background: $bg-color-button;
             border: none;
-            border-top: solid 1px #f3f3f3;
             height: 50px;
             line-height: 50px;
             a{
@@ -315,3 +319,62 @@ footer{
 }
     
 ///////////////////////////////////
+
+
+//////////////////////////////////
+// carrito 
+
+
+.ctn-modal{
+    width: 80%;
+    margin: 0 10%;
+    max-height: 88vh;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    .modal-header{
+        display: flex;
+        justify-content: space-around;
+        background-color: #0a0909;
+        color: #fff;
+        width: 100%;
+        .modal-header-title{
+            justify-self: start;
+        }
+    }
+    .modal-header-button{
+        cursor: pointer;
+    }
+}
+
+.ctn-modal > .modal-ctn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.ctn-total{
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.delete-product{
+    cursor: pointer;
+}

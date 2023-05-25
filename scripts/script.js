@@ -30,29 +30,29 @@ const despedir = () =>{
     }    
 }
 
-// objetos
+// // objetos
 
-// class Sillas{
-//     constructor(tipo, precio, color){
-//         this.tipo = tipo;
-//         this.precio = precio;
-//         this.color = color;
-//         this.info = `silla ${this.tipo}, para la comodidad, con un valor de: ${this.precio}, y de color: ${this.color}.`;
-//     }
-//     verInfo(){
-//         document.write(this.info + "<br>");
-//     }
-// }
+// // class Sillas{
+// //     constructor(tipo, precio, color){
+// //         this.tipo = tipo;
+// //         this.precio = precio;
+// //         this.color = color;
+// //         this.info = `silla ${this.tipo}, para la comodidad, con un valor de: ${this.precio}, y de color: ${this.color}.`;
+// //     }
+// //     verInfo(){
+// //         document.write(this.info + "<br>");
+// //     }
+// // }
 
 // const silla1 = new Sillas ("acolchonada", "$" + 20000, "negro");
-// const silla2 = new Sillas ("con apoya brazos", "$" + 15000, "blanco");
+//const silla2 = new Sillas ("con apoya brazos", "$" + 15000, "blanco");
 // const silla3 = new Sillas ("acolchonada", "$" + 19000, "gris");
 
 //llamando objetos
 
-// silla1.verInfo();
-// silla2.verInfo();
-// silla3.verInfo();
+//silla1.verInfo();
+//silla2.verInfo();
+//silla3.verInfo();
 
 // llamando funciones
 
@@ -121,18 +121,13 @@ const init = () =>{
     alert(`lista de inventario por categorias: 
             1: Sillas
             2: Mesas`);
-    
-    const listado = sillaNegra.reduce((acc, el) => acc += `${el.id} - ${el.producto} - $${el.precio} \n`, "\n");
-
-    const elecUser = parseInt(prompt(`Ingrese el nro deseado ${listado}`));
-
-    const buscarProd = sillaNegra.find(p => p.id === elecUser);
-
-    console.log(buscarProd);
-
-    const nuevoObjeto = {
-        id: buscarProd.id,
-        producto: buscarProd.producto,
+        const listado = sillaNegra.reduce((acc, el) => acc += `${el.id} - ${el.producto} - $${el.precio} \n`, "\n");
+        const elecUser = parseInt(prompt(`Ingrese el nro deseado ${listado}`));
+        const buscarProd = sillaNegra.find(p => p.id === elecUser);
+        console.log(buscarProd);
+        const nuevoObjeto = {
+            id: buscarProd.id,
+            producto: buscarProd.producto,
         color: buscarProd.color,
         precio: buscarProd.precio,
         categoria: buscarProd.categoria,
@@ -180,10 +175,9 @@ const cate = () =>{
 cate();
 
 
-// var / prompt
+// // var / prompt
 
-let pregunta = prompt("elija un precio de a partir de 15000 a 50000");
-let colorPregunta = prompt("color");
+let pregunta = prompt("elija un precio de a partir de 15000 a 50000"); let colorPregunta = prompt("color");
 
 //funciones con arrays
 
@@ -193,7 +187,6 @@ const precios = () => {
     });
     alert(filtro);    
 }
-
 const colorSilla = () =>{
     if(colorPregunta === colores[0]){
         alert(`Esto es ${colores[0]}`);
@@ -212,6 +205,70 @@ const colorSilla = () =>{
 
 precios();
 colorSilla();
+
+
+let carrito = [];
+
+
+let seleccion = prompt("desea comprar");
+
+
+while(seleccion != "si" && seleccion != "no"){
+    alert("pls ingresa si o no");
+    seleccion = prompt("desea comprar");
+}
+
+if(seleccion == "si"){
+    alert("a continuacion los producs");
+    let todosLosProductos = StockMesa.map((producto) => producto.categoria + " " + producto.precio + "$");
+    alert(todosLosProductos)
+}else if(seleccion == "no"){
+    alert("chau")
+}
+
+
+
+while(seleccion != "no"){
+    let producto = prompt("agrega un prod a tu carrito");
+    let precio = 0;
+
+    if(producto == "mesa niño" || producto == "mesa redonda" || producto == "mesa rectangular"){
+        switch(producto){
+            case "mesa niño":
+                precio = 20000;
+                break;
+                case "mesa redonda":
+                    precio = 10000;
+                    break;
+                    case "mesa rectangular":
+                        precio = 30000;
+                        break;
+                        default:
+                            break;
+            }
+            let unidades = parseInt(prompt("cuantas quiere llevar"));
+            carrito.push({producto, unidades, precio});
+            console.log("🚀 ~ file: carrito.js:151 ~ carrito:", carrito)
+            
+    } else{
+        alert("no ta")
+    }
+
+    seleccion = prompt("quiere ma");
+    while(seleccion === "no"){
+        alert("gracias perro");
+        carrito.forEach((carritoFinal)=> {
+            console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades}, total: ${carritoFinal.unidades * carritoFinal.precio}`)
+        });
+        break;
+    }
+
+}
+
+const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0); 
+console.log("🚀 ~ file: carrito.js:169 ~ total:", total)
+
+
 
 
 
