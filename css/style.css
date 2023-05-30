@@ -14,9 +14,12 @@ a {
   cursor: pointer; }
 
 .ctn-bienvenida {
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  justify-content: center; }
+  height: 400px; }
   .ctn-bienvenida h1 {
     text-align: center;
     margin-top: 25px;
@@ -146,6 +149,7 @@ a {
 
 .card {
   justify-content: center;
+  align-items: center;
   position: relative;
   width: 350px;
   margin: 20px;
@@ -239,18 +243,18 @@ footer {
     margin-top: 10px; }
 
 .ctn-modal {
-  width: 80%;
-  margin: 0 10%;
+  width: 1000px;
+  margin: 0 30%;
   max-height: 88vh;
-  background-color: #121212;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   overflow: auto;
   z-index: 9;
-  top: 12vh;
+  top: 8vh;
   scrollbar-color: none; }
   .ctn-modal::-webkit-scrollbar {
     display: none; }
@@ -260,6 +264,8 @@ footer {
     background-color: #0a0909;
     color: #fff;
     width: 100%; }
+    .ctn-modal .modal-header h1 {
+      font-size: 2rem; }
     .ctn-modal .modal-header .modal-header-title {
       justify-self: start; }
   .ctn-modal .modal-header-button {
@@ -268,19 +274,46 @@ footer {
 .ctn-modal > .modal-ctn {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
   width: 70%;
-  margin: 10px; }
+  margin: 12px;
+  height: 30px;
+  border-bottom: 1px solid #000; }
+  .ctn-modal > .modal-ctn h3 {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 155px; }
+  .ctn-modal > .modal-ctn .ctn-precio {
+    position: absolute;
+    left: 400px; }
+  .ctn-modal > .modal-ctn .ctn-cantidad {
+    position: absolute;
+    right: 390px; }
+  .ctn-modal > .modal-ctn .ctn-total-precio {
+    position: absolute;
+    right: 200px; }
+  .ctn-modal > .modal-ctn .sumar {
+    cursor: pointer;
+    position: absolute;
+    right: 335px; }
+  .ctn-modal > .modal-ctn .restar {
+    cursor: pointer;
+    position: absolute;
+    left: 550px; }
 
 .ctn-total {
-  font-size: 25px;
+  font-size: 20px;
   padding: 20px;
-  text-align: center;
+  margin-left: 500px;
   padding-top: 20px; }
 
 .delete-product {
-  cursor: pointer; }
+  cursor: pointer;
+  position: absolute;
+  right: 160px; }
 
 .cantidad-carrito {
   background-color: #ff0000;
@@ -293,10 +326,237 @@ footer {
   position: absolute;
   display: none; }
 
-.sumar {
-  cursor: pointer; }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  margin: 10px 0;
+  border: 1px solid transparent;
+  background: transparent; }
+  .contact-form h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-variant: small-caps; }
+  .contact-form input {
+    margin: 10px 0;
+    height: 45px;
+    width: 900px;
+    font-size: 20px; }
+  .contact-form .cont-text-area {
+    width: 900px;
+    font-size: 20px;
+    resize: none; }
+  .contact-form .cont-enviar {
+    font-size: 1.4em;
+    border-radius: 5px;
+    width: 400px;
+    background: #2c29299b;
+    color: #efe0b2; }
+    .contact-form .cont-enviar:hover {
+      color: #fdf3a4; }
 
-.restar {
-  cursor: pointer; }
+@media screen and (max-width: 991px) {
+  .ver-cart {
+    position: absolute;
+    right: 100px;
+    top: 15px; }
+    .ver-cart .cantidad-carrito {
+      font-size: 10px;
+      top: 20px;
+      right: 10px; }
+
+  .contact-form input {
+    width: 650px; }
+  .contact-form .cont-text-area {
+    width: 650px; }
+  .contact-form .cont-enviar {
+    width: 350px; }
+
+  .ctn-modal {
+    width: 700px;
+    margin: 0; }
+    .ctn-modal .modal-ctn h3 {
+      left: 110px; }
+    .ctn-modal .modal-ctn .ctn-precio {
+      left: 260px;
+      top: 65px; }
+    .ctn-modal .modal-ctn .restar {
+      left: 335px;
+      top: 65px; }
+    .ctn-modal .modal-ctn .ctn-cantidad {
+      right: 320px;
+      top: 65px; }
+    .ctn-modal .modal-ctn .sumar {
+      right: 275px;
+      top: 65px; }
+    .ctn-modal .modal-ctn .ctn-total-precio {
+      right: 145px;
+      top: 65px; }
+    .ctn-modal .modal-ctn .delete-product {
+      right: 105px;
+      top: 65px; }
+    .ctn-modal .ctn-total {
+      margin-left: 320px; } }
+@media screen and (max-width: 770px) {
+  .ctn-modal {
+    width: 650px;
+    margin: 0 -80px; }
+    .ctn-modal .modal-ctn h3 {
+      left: 105px; }
+    .ctn-modal .modal-ctn .ctn-precio {
+      left: 250px; }
+    .ctn-modal .modal-ctn .restar {
+      left: 315px; }
+    .ctn-modal .modal-ctn .ctn-cantidad {
+      right: 300px; }
+    .ctn-modal .modal-ctn .sumar {
+      right: 268px; }
+    .ctn-modal .modal-ctn .delete-product {
+      right: 100px; }
+    .ctn-modal .ctn-total {
+      margin-left: 275px; } }
+@media screen and (max-width: 700px) {
+  .contact-form input {
+    width: 550px; }
+  .contact-form .cont-text-area {
+    width: 550px; }
+  .contact-form .cont-enviar {
+    width: 250px; }
+
+  .ctn-modal {
+    width: 550px;
+    margin: 0 -25px; }
+    .ctn-modal .modal-ctn h3 {
+      left: 85px;
+      font-size: 1.3rem;
+      top: 65px; }
+    .ctn-modal .modal-ctn .ctn-precio {
+      left: 210px;
+      font-size: 14px;
+      top: 69px; }
+    .ctn-modal .modal-ctn .restar {
+      left: 280px;
+      top: 68px; }
+    .ctn-modal .modal-ctn .ctn-cantidad {
+      right: 240px;
+      font-size: 14px;
+      top: 69px; }
+    .ctn-modal .modal-ctn .sumar {
+      right: 213px;
+      top: 68px; }
+    .ctn-modal .modal-ctn .ctn-total-precio {
+      right: 115px;
+      font-size: 14px;
+      top: 68px; }
+    .ctn-modal .modal-ctn .delete-product {
+      right: 80px; }
+    .ctn-modal .ctn-total {
+      margin-left: 230px; } }
+@media screen and (max-width: 580px) {
+  .contact-form h3 {
+    font-size: 2.3rem; }
+  .contact-form input {
+    width: 430px; }
+  .contact-form .cont-text-area {
+    width: 430px; }
+  .contact-form .cont-enviar {
+    width: 250px; }
+
+  .ctn-modal {
+    width: 460px;
+    margin: 0; }
+    .ctn-modal .modal-ctn h3 {
+      left: 70px; }
+    .ctn-modal .modal-ctn .ctn-precio {
+      left: 185px; }
+    .ctn-modal .modal-ctn .restar {
+      left: 240px; }
+    .ctn-modal .modal-ctn .ctn-cantidad {
+      right: 195px; }
+    .ctn-modal .modal-ctn .sumar {
+      right: 175px; }
+    .ctn-modal .modal-ctn .ctn-total-precio {
+      right: 90px; }
+    .ctn-modal .modal-ctn .delete-product {
+      right: 65px; }
+    .ctn-modal .ctn-total {
+      margin-left: 160px;
+      font-size: 1rem; } }
+@media screen and (max-width: 450px) {
+  .ver-cart {
+    position: absolute;
+    right: 80px;
+    top: 20px; }
+    .ver-cart .cantidad-carrito {
+      top: 15px; }
+
+  .ctn-bienvenida h1 {
+    font-size: 35px; }
+
+  .ctn-articles .ctn-sillas-padre {
+    width: 350px; }
+  .ctn-articles .ctn-mesas-padre {
+    width: 350px; }
+  .ctn-articles .ctn-sillones-padre {
+    width: 350px; }
+
+  .card {
+    width: 300px; }
+
+  .contact-form h3 {
+    font-size: 2.1rem; }
+  .contact-form input {
+    width: 360px; }
+  .contact-form .cont-text-area {
+    width: 360px; }
+  .contact-form .cont-enviar {
+    width: 230px; }
+
+  .ctn-modal {
+    width: 390px; }
+    .ctn-modal .modal-ctn h3 {
+      left: 60px;
+      font-size: 19px; }
+    .ctn-modal .modal-ctn .ctn-precio {
+      left: 160px;
+      font-size: 12px;
+      top: 71px; }
+    .ctn-modal .modal-ctn .restar {
+      left: 205px; }
+    .ctn-modal .modal-ctn .ctn-cantidad {
+      right: 165px; }
+    .ctn-modal .modal-ctn .sumar {
+      right: 149px; }
+    .ctn-modal .modal-ctn .ctn-total-precio {
+      font-size: 12px;
+      right: 75px;
+      top: 71px; }
+    .ctn-modal .modal-ctn .delete-product {
+      right: 55px; }
+    .ctn-modal .ctn-total {
+      margin-left: 120px; } }
+@media screen and (max-width: 405px) {
+  .ctn-modal {
+    margin: 0 -5px; } }
+@media screen and (max-width: 380px) {
+  .ctn-articles .ctn-sillas-padre {
+    width: 320px; }
+  .ctn-articles .ctn-mesas-padre {
+    width: 320px; }
+  .ctn-articles .ctn-sillones-padre {
+    width: 320px; }
+
+  .contact-form h3 {
+    font-size: 2rem; }
+  .contact-form input {
+    width: 330px; }
+  .contact-form .cont-text-area {
+    width: 330px; }
+  .contact-form .cont-enviar {
+    width: 220px; }
+
+  .ctn-modal {
+    margin: 0 -12px; } }
 
 /*# sourceMappingURL=style.css.map */

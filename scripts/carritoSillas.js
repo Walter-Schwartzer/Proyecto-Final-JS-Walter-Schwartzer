@@ -1,9 +1,8 @@
 
-const ctnSectionShopMesas = document.getElementById(`ctn-productosMesas`);
-
 const creandoElementos = () =>{
-    StockMesa.forEach((product)=>{
-        let article = document.createElement(`article`);
+
+    stockSilla.forEach((product)=>{
+        const article = document.createElement(`article`);
         article.classList.add(`card`);
         article.classList.add(`col-4`);
         article.innerHTML = `
@@ -17,7 +16,7 @@ const creandoElementos = () =>{
         </div>
         `;
 
-        ctnSectionShopMesas.append(article);
+        ctnSectionShop.append(article);
 
         const button = document.getElementById(`agregar${product.id}`);
 
@@ -51,3 +50,10 @@ const creandoElementos = () =>{
 }
 
 creandoElementos();
+
+
+
+
+
+
+

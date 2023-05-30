@@ -26,7 +26,7 @@
                             <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#articulos">Catalogo</a>
+                            <a class="nav-link" href="../index.html">Catalogo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../pages/nosotros.html">Nosotros</a>
@@ -43,22 +43,14 @@
         </nav>
     </header>
     <main class="container">
-        <div class="ctn-bienvenida">
-            <h1>Bienvenidos a Deco En Sillas</h1>
-            <button><a href="#articulos">Ir Al Catalogo</a></button>            
-        </div>
-        <section id="articulos" class="ctn-articles row">
-            <article class="ctn-sillas-padre col-6">
-                <div class="ctn-sillas">
-                    <a href="../pages/sillas.html">Sillas</a>
-                </div>
-            </article>
-            <article class="ctn-mesas-padre col-6">
-                <div class="ctn-mesas">
-                    <a href="../pages/mesas.html">Mesas</a>
-                </div>
-            </article>
-        </section>
+        <form action="https://formsubmit.co/madrynsillas@gmail.com" method="post" class="contact-form" netlify>
+            <h3>Contactanos</h3>
+            <input type="text" name="user_name" id="name" placeholder="Ingrese su nombre" required>
+            <input type="text" name="user_email" id="email" placeholder="Correo Electronico" required>
+            <input type="tel" name="user_number" id="number" placeholder="Numero de telefono" required>
+            <textarea class="cont-text-area" name="user_question" id="question" cols="30" rows="10" required placeholder="Ingrese su consulta"></textarea>
+            <input class="cont-enviar" type="submit">
+        </form>
     </main>
     <footer class="container">
         <div class="ctn-footer row">
