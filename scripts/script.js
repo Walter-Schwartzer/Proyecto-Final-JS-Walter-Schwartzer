@@ -86,9 +86,81 @@ const crearCarrito = () =>{
 
     const total = document.createElement(`div`);
     total.classList.add(`ctn-total`);
-    total.innerHTML = `Total: $${precioTotal}`;
+    total.innerHTML = `
+    Total: $${precioTotal}
+    <button class="btn-compra" id="checkout-btn">Ir al checkout</button>
+    <div id="button-checkout"></div>
+    `;
 
     modal.append(total);
+
+    //mp
+
+    const mercadopago = new MercadoPago(
+      "TEST-85a26426-be96-41d9-a354-c9e7012593cb",
+      {
+        locale: "es-AR",
+      }
+    );
+
+
+    const checkoutButton = total.querySelector("#checkout-btn");
+
+    checkoutButton.addEventListener(`click`, ()=>{
+        checkoutButton.remove();
+
+        const orderData = {
+            quantity: 1,
+            descripcion: "compra en DecoEnSillas",
+            price: precioTotal,
+        }
+
+        fetch("http://localhost:8080/create_preference", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify(orderData),
+        })
+            .then(function (response) {
+            return response.json();
+            })
+            .then(function (preference) {
+            createCheckoutButton(preference.id);
+
+            $(".shopping-cart").fadeOut(500);
+            setTimeout(() => {
+                $(".container_payment").show(500).fadeIn();
+            }, 500);
+            })
+            .catch(function () {
+            alert("Unexpected error");
+            $("#checkout-btn").attr("disabled", false);
+            });
+    });
+
+    function createCheckoutButton(preferenceId) {
+      // Initialize the checkout
+        const bricksBuilder = mercadopago.bricks();
+
+        const renderComponent = async (bricksBuilder) => {
+        //if (window.checkoutButton) window.checkoutButton.unmount();
+        await bricksBuilder.create(
+            "wallet",
+          "button-checkout", // class/id where the payment button will be displayed
+            {
+            initialization: {
+                preferenceId: preferenceId,
+            },
+            callbacks: {
+                onError: (error) => console.error(error),
+                onReady: () => {},
+            },
+            }
+        );
+        };
+        window.checkoutButton = renderComponent(bricksBuilder);
+    }
 };
 
 

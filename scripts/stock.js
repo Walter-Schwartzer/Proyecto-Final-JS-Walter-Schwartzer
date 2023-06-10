@@ -148,36 +148,49 @@ const StockMesa = [
     }
 ];
 const StockSillones = [
-    {
-        id: 1,
-        producto: "sillon eames",
-        img: `../img/sillon/sillonEames.jpg`,
-        cantidad: 1,
-        precio: 30500,
-        categoria: "sillones",
-    },
-    {
-        id: 2,
-        producto: "sillon eiffel",
-        img: `../img/sillon/sillonEiffel.jpg`,
-        cantidad: 1,
-        precio: 30500,
-        categoria: "sillones",
-    },
-    {
-        id: 3,
-        producto: "sillon mecedora",
-        img: `../img/sillon/sillonMecedora.jpg`,
-        cantidad: 1,
-        precio: 30500,
-        categoria: "sillones",
-    },
-    {
-        id: 4,
-        producto: "sillon tulip suizo",
-        img: `../img/sillon/sillonTulipSuizo.jpg`,
-        cantidad: 1,
-        precio: 30500,
-        categoria: "sillones",
-    }
+  {
+    id: 1,
+    producto: "sillon eames",
+    img: `../img/sillon/sillonEames.jpg`,
+    cantidad: 1,
+    precio: 30500,
+    categoria: "sillones",
+    disponibilidad: 1,
+  },
+  {
+    id: 2,
+    producto: "sillon eiffel",
+    img: `../img/sillon/sillonEiffel.jpg`,
+    cantidad: 1,
+    precio: 30500,
+    categoria: "sillones",
+    disponibilidad: 1,
+  },
+  {
+    id: 3,
+    producto: "sillon mecedora",
+    img: `../img/sillon/sillonMecedora.jpg`,
+    cantidad: 1,
+    precio: 30500,
+    categoria: "sillones",
+    disponibilidad: 1,
+  },
+  {
+    id: 4,
+    producto: "sillon tulip suizo",
+    img: `../img/sillon/sillonTulipSuizo.jpg`,
+    cantidad: 1,
+    precio: 30500,
+    categoria: "sillones",
+    disponibilidad: 0,
+  },
 ];
+
+
+const generarProduct = () =>{
+    if(StockSillones[1].cantidad !== 1){
+            console.log("no hay cantidad");
+        }
+    }
+
+generarProduct();
