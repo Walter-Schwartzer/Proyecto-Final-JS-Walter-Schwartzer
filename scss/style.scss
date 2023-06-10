@@ -38,6 +38,52 @@ a{
 }
 
 //////////////////////////////////////////////////////////
+// buscador
+
+#ctn-bars-search{
+    background-color: transparent;
+    padding: 15px;
+    z-index: 9;
+    transition: all 600ms;
+    input{
+        display: block;
+        width: 1200px;
+        margin: auto;
+        padding: 5px;
+        font-size: 18px;
+        outline: 0;
+    }
+}
+
+#box-search{
+    position: fixed;
+    top: 137px;
+    width: 1200px;
+    background-color: transparent;
+    z-index: 8;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    display: none;
+    list-style: none;
+    a{
+        display: block;
+        width: 1100px;
+        color: #777;
+        padding: 12px 15px;
+    }
+    a:hover{
+        color: #2498db;
+    }
+    i{
+        margin-right: 10px;
+        color: #777;
+    }
+}
+
+
+
+//////////////////////////////////////////////////////////
 
 // index/bienvenida
 
