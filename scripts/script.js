@@ -115,28 +115,28 @@ const crearCarrito = () =>{
             price: precioTotal,
         }
 
-        fetch("https://decoensillas/create_preference.netlify.app", {
-          method: "POST",
-          headers: {
+        fetch("http://localhost:8080/create_preference", {
+            method: "POST",
+            headers: {
             "Content-Type": "application/json",
-          },
-          body: JSON.stringify(orderData),
+            },
+            body: JSON.stringify(orderData),
         })
-          .then(function (response) {
+            .then(function (response) {
             return response.json();
-          })
-          .then(function (preference) {
+            })
+            .then(function (preference) {
             createCheckoutButton(preference.id);
 
             $(".shopping-cart").fadeOut(500);
             setTimeout(() => {
-              $(".container_payment").show(500).fadeIn();
+                $(".container_payment").show(500).fadeIn();
             }, 500);
-          })
-          .catch(function () {
+            })
+            .catch(function () {
             alert("Unexpected error");
             $("#checkout-btn").attr("disabled", false);
-          });
+            });
     });
 
     function createCheckoutButton(preferenceId) {
