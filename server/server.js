@@ -21,19 +21,19 @@ app.get("/", function (req, res) {
 
 app.post("/create_preference", (req, res) => {
     let preference = {
-    items: [
+      items: [
         {
-        title: req.body.description,
-        unit_price: Number(req.body.price),
-        quantity: Number(req.body.quantity),
+          title: req.body.description,
+          unit_price: Number(req.body.price),
+          quantity: Number(req.body.quantity),
         },
-    ],
-    back_urls: {
-        success: "http://localhost:8080",
-        failure: "http://localhost:8080",
+      ],
+      back_urls: {
+        success: "https://decoensillas.netlify.app",
+        failure: "https://decoensillas.netlify.app",
         pending: "",
-    },
-    auto_return: "approved",
+      },
+      auto_return: "approved",
     };
 
     mercadopago.preferences
