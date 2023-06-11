@@ -115,7 +115,7 @@ const crearCarrito = () =>{
             price: precioTotal,
         }
 
-        fetch("https://decoensillas.netlify.app/create_preference", {
+        fetch("https://decoensillas/create_preference.netlify.app", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
