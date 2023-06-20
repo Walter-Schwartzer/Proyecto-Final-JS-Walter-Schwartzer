@@ -17,7 +17,7 @@ a {
   transition: all 600ms; }
   #ctn-bars-search input {
     display: block;
-    width: 1200px;
+    width: 100%;
     margin: auto;
     padding: 5px;
     font-size: 18px;
@@ -246,6 +246,44 @@ a {
         .card .back .link a:hover {
           color: #2498db; }
 
+.btn-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; }
+  .btn-whatsapp::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #00e676;
+    animation: onda 1.7s infinite;
+    animation-delay: 1s; }
+  .btn-whatsapp::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #00e676;
+    animation: onda 1.7s infinite;
+    animation-delay: 1.3s; }
+  .btn-whatsapp img {
+    position: relative;
+    z-index: 2; }
+
+@keyframes onda {
+  0% {
+    transform: scale(1); }
+  15% {
+    opacity: 1; }
+  100% {
+    transform: scale(2.5);
+    opacity: 0; } }
 footer {
   padding: 50px 0; }
   footer .ctn-footer {

@@ -1,17 +1,16 @@
-
-
 const ctnSectionShopSillones = document.getElementById(`ctn-productosSillones`);
 
+const creandoMesas = async () => {
+  const response = await fetch("../json/dataSillon.json");
+  const data = await response.json();
 
-const creandoSillones = async () =>{
-    const response = await fetch("../dataSillon.json");
-    const data = await response.json();
-
-    data.forEach((product) => {
-        let article = document.createElement(`article`);
-        article.classList.add(`card`);
-        article.classList.add(`col-4`);
-        article.innerHTML = `
+  data.forEach((product) => {
+    if (product.stock === true) {
+      console.log("hay stock disponible", product);
+      let article = document.createElement(`article`);
+      article.classList.add(`card`);
+      article.classList.add(`col-4`);
+      article.innerHTML = `
         <div class="face front">
             <img src="${product.img}">
             <h3>${product.producto}</h3>
@@ -22,31 +21,43 @@ const creandoSillones = async () =>{
         </div>
         `;
 
-        ctnSectionShopSillones.append(article);
+      ctnSectionShopSillones.append(article);
 
-        const button = document.getElementById(`agregar${product.id}`);
+      const button = document.getElementById(`agregar${product.id}`);
 
-        button.addEventListener("click", () => {
-            const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
-            if (repeat) {
-                carrito.map((prod) => {
-                    if (prod.id === product.id) {
-                        prod.cantidad++;
-                    }
-                });
-            } else {
-            carrito.push({
-                id: product.id,
-                nombre: product.producto,
-                precio: product.precio,
-                cantidad: product.cantidad,
-            });
-            carritoCounter();
-            saveLocal();
+      button.addEventListener("click", () => {
+        const repeat = carrito.some(
+          (repeatProduct) => repeatProduct.id === product.id
+        );
+
+        // repeat ? carrito.map ((prod) => { prod.id === product.id ? prod.cantidad++}) : carrito.push({id: product.id, nombre: product.producto, precio: product.precio, cantidad: product.cantidad,});
+
+        if (repeat) {
+          carrito.map((prod) => {
+            if (prod.id === product.id) {
+              prod.cantidad++;
             }
-        });
-    });    
-}
+          });
+        } else {
+          carrito.push({
+            id: product.id,
+            nombre: product.producto,
+            precio: product.precio,
+            cantidad: product.cantidad,
+          });
+          console.log(
+            "🚀 ~ file: carrito.js:47 ~ button.addEventListener ~ carrito:",
+            carrito
+          );
 
-creandoSillones();
+          carritoCounter();
+          saveLocal();
+        }
+      });
+    } else {
+      console.log("no hay stock disponible de", product);
+    }
+  });
+};
 
+creandoMesas();
